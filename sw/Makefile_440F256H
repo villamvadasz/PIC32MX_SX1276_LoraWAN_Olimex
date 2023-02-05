@@ -1,0 +1,130 @@
+# MPLAB IDE generated this makefile for use with GNU make.
+# Project: PIC32_OLIMEX_LCD.mcp
+# Date: Thu Feb 02 21:04:27 2023
+
+AS = xc32-as.exe
+CC = xc32-gcc.exe
+LD = xc32-ld.exe
+AR = xc32-ar.exe
+HX = xc32-bin2hex.exe
+RM = del
+
+all: ./output/output.hex
+
+./output/output.hex : ./output/output.elf
+	$(HX) ".\output\output.elf"
+
+./output/output.elf : output/main.o output/c_eep_manager.o output/bootloader_interface.o output/app.o output/serial_usb.o output/usb.o output/usb_descriptors.o output/usb_function_cdc.o output/usb_device.o output/tmr.o output/mal.o output/isr.o output/exceptions.o output/stackmeasure.o output/stackmeasure_helper.o output/wakeup.o output/sleep.o output/eep_manager_crc.o output/eep_manager.o output/eeprom.o output/dee_page_helper.o output/dee_page.o output/dee.o output/ringBuffer.o output/ad.o output/spi_sw.o output/noinitram.o output/sw_timer.o output/radio_driver_SX1276.o output/radio_driver_hal.o output/AES.o output/lorawan_aes.o output/lorawan.o output/lorawan_aes_cmac.o output/lorawan_eu.o output/sx1276.o
+	$(CC) -mprocessor=32MX440F256H "output\main.o" "output\c_eep_manager.o" "output\bootloader_interface.o" "output\app.o" "output\serial_usb.o" "output\usb.o" "output\usb_descriptors.o" "output\usb_function_cdc.o" "output\usb_device.o" "output\tmr.o" "output\mal.o" "output\isr.o" "output\exceptions.o" "output\stackmeasure.o" "output\stackmeasure_helper.o" "output\wakeup.o" "output\sleep.o" "output\eep_manager_crc.o" "output\eep_manager.o" "output\eeprom.o" "output\dee_page_helper.o" "output\dee_page.o" "output\dee.o" "output\ringBuffer.o" "output\ad.o" "output\spi_sw.o" "output\noinitram.o" "output\sw_timer.o" "output\radio_driver_SX1276.o" "output\radio_driver_hal.o" "output\AES.o" "output\lorawan_aes.o" "output\lorawan.o" "output\lorawan_aes_cmac.o" "output\lorawan_eu.o" "output\sx1276.o" -o".\output\output.elf" -Wl,--script="lkr\standalone_32MX440F256H.ld",--defsym=__MPLAB_BUILD=1,-Map=".\output\output.map"
+
+output/main.o : src/main.c inc/main.h inc/version/version.h inc/mal/k_stdtype.h inc/c_main.h inc/mal/mal.h inc/mal/sleep.h inc/mal/k_stdtype.h inc/tmr/tmr.h inc/mal/stackmeasure.h inc/bootloader_interface.h inc/c_app.h inc/c_task.h inc/ad.h inc/app.h inc/eeprom_manager/eep_manager.h inc/c_eep_manager.h inc/mal/isr.h inc/usb/serial_usb.h inc/usb/usb.h inc/usb/usb_compiler.h inc/usb/usb_config.h inc/usb/usb_common.h inc/usb/usb_ch9.h inc/usb/usb_device.h inc/usb/usb_hal.h inc/usb/usb_hal_pic32.h inc/eeprom/dee.h inc/mal/wakeup.h inc/spi_sw/spi_sw.h inc/sx1276/sx1276.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\main.c" -o".\output\main.o" -MMD -MF".\output\main.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/c_eep_manager.o : src/c_eep_manager.c inc/eeprom_manager/eep_manager.h inc/mal/k_stdtype.h inc/c_eep_manager.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\c_eep_manager.c" -o".\output\c_eep_manager.o" -MMD -MF".\output\c_eep_manager.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/bootloader_interface.o : src/bootloader_interface.c inc/bootloader_interface.h inc/mal/mal.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\bootloader_interface.c" -o".\output\bootloader_interface.o" -MMD -MF".\output\bootloader_interface.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/app.o : src/app.c inc/app.h inc/mal/mal.h inc/mal/k_stdtype.h inc/mal/sleep.h inc/mal/k_stdtype.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\app.c" -o".\output\app.o" -MMD -MF".\output\app.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/serial_usb.o : src/usb/serial_usb.c inc/usb/serial_usb.h inc/c_serial_usb.h inc/mal/k_stdtype.h inc/buffer/ringBuffer.h inc/mal/mal.h inc/usb/usb.h inc/usb/usb_compiler.h inc/usb/usb_config.h inc/usb/usb_common.h inc/usb/usb_ch9.h inc/usb/usb_device.h inc/usb/usb_hal.h inc/usb/usb_hal_pic32.h inc/usb/usb_function_cdc.h inc/usb/usb.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\usb\serial_usb.c" -o".\output\serial_usb.o" -MMD -MF".\output\serial_usb.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/usb.o : src/usb/usb.c inc/usb/usb.h inc/usb/usb_compiler.h inc/mal/mal.h inc/usb/usb_config.h inc/usb/usb_common.h inc/usb/usb_ch9.h inc/usb/usb_device.h inc/usb/usb_hal.h inc/usb/usb_hal_pic32.h inc/c_usb.h inc/usb/usb_function_cdc.h inc/usb/usb.h inc/c_isr.h inc/tmr/tmr.h inc/mal/k_stdtype.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\usb\usb.c" -o".\output\usb.o" -MMD -MF".\output\usb.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/usb_descriptors.o : src/usb/usb_descriptors.c inc/usb/usb.h inc/usb/usb_compiler.h inc/mal/mal.h inc/usb/usb_config.h inc/usb/usb_common.h inc/usb/usb_ch9.h inc/usb/usb_device.h inc/usb/usb_hal.h inc/usb/usb_hal_pic32.h inc/usb/usb_function_cdc.h inc/usb/usb.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\usb\usb_descriptors.c" -o".\output\usb_descriptors.o" -MMD -MF".\output\usb_descriptors.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/usb_function_cdc.o : src/usb/usb_function_cdc.c inc/usb/usb.h inc/usb/usb_compiler.h inc/mal/mal.h inc/usb/usb_config.h inc/usb/usb_common.h inc/usb/usb_ch9.h inc/usb/usb_device.h inc/usb/usb_hal.h inc/usb/usb_hal_pic32.h inc/usb/usb_function_cdc.h inc/usb/usb.h inc/c_usb.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\usb\usb_function_cdc.c" -o".\output\usb_function_cdc.o" -MMD -MF".\output\usb_function_cdc.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/usb_device.o : src/usb/usb_device.c inc/usb/usb.h inc/usb/usb_compiler.h inc/mal/mal.h inc/usb/usb_config.h inc/usb/usb_common.h inc/usb/usb_ch9.h inc/usb/usb_device.h inc/usb/usb_hal.h inc/usb/usb_hal_pic32.h inc/c_usb.h inc/usb/usb_device_local.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\usb\usb_device.c" -o".\output\usb_device.o" -MMD -MF".\output\usb_device.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/tmr.o : src/tmr/tmr.c inc/mal/mal.h inc/tmr/tmr.h inc/mal/k_stdtype.h inc/c_tmr.h inc/c_main.h inc/main.h inc/version/version.h inc/c_main.h inc/c_isr.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\tmr\tmr.c" -o".\output\tmr.o" -MMD -MF".\output\tmr.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/mal.o : src/mal/mal.c inc/mal/mal.h inc/c_main.h inc/mal/noinitram.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\mal\mal.c" -o".\output\mal.o" -MMD -MF".\output\mal.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/isr.o : src/mal/isr.c inc/mal/isr.h inc/c_isr.h inc/tmr/tmr.h inc/mal/k_stdtype.h inc/mal/mal.h inc/usb/usb.h inc/usb/usb_compiler.h inc/usb/usb_config.h inc/usb/usb_common.h inc/usb/usb_ch9.h inc/usb/usb_device.h inc/usb/usb_hal.h inc/usb/usb_hal_pic32.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\mal\isr.c" -o".\output\isr.o" -MMD -MF".\output\isr.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/exceptions.o : src/mal/exceptions.c inc/mal/mal.h inc/c_isr.h inc/tmr/tmr.h inc/mal/k_stdtype.h inc/mal/exceptions.h inc/mal/k_stdtype.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\mal\exceptions.c" -o".\output\exceptions.o" -MMD -MF".\output\exceptions.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/stackmeasure.o : src/mal/stackmeasure.c inc/mal/stackmeasure.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\mal\stackmeasure.c" -o".\output\stackmeasure.o" -MMD -MF".\output\stackmeasure.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/stackmeasure_helper.o : src/mal/stackmeasure_helper.S
+	$(CC) -mprocessor=32MX440F256H -c -MMD -MF".\output\stackmeasure_helper.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" "src\mal\stackmeasure_helper.S" -o".\output\stackmeasure_helper.o" -Wa,-gdwarf-2
+
+output/wakeup.o : src/mal/wakeup.c inc/mal/wakeup.h inc/mal/c_wakeup.h inc/mal/k_stdtype.h inc/mal/mal.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\mal\wakeup.c" -o".\output\wakeup.o" -MMD -MF".\output\wakeup.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/sleep.o : src/mal/sleep.c inc/mal/sleep.h inc/mal/k_stdtype.h inc/c_sleep.h inc/mal/mal.h inc/mal/k_stdtype.h inc/tmr/tmr.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\mal\sleep.c" -o".\output\sleep.o" -MMD -MF".\output\sleep.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/eep_manager_crc.o : src/eeprom_manager/eep_manager_crc.c inc/eeprom_manager/eep_manager.h inc/mal/k_stdtype.h inc/c_eep_manager.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\eeprom_manager\eep_manager_crc.c" -o".\output\eep_manager_crc.o" -MMD -MF".\output\eep_manager_crc.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/eep_manager.o : src/eeprom_manager/eep_manager.c inc/eeprom_manager/eep_manager.h inc/mal/k_stdtype.h inc/c_eep_manager.h inc/eeprom/eeprom.h inc/mal/mal.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\eeprom_manager\eep_manager.c" -o".\output\eep_manager.o" -MMD -MF".\output\eep_manager.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/eeprom.o : src/eeprom/eeprom.c inc/eeprom/eeprom.h inc/eeprom/dee.h inc/mal/k_stdtype.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\eeprom\eeprom.c" -o".\output\eeprom.o" -MMD -MF".\output\eeprom.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/dee_page_helper.o : src/eeprom/dee_page_helper.c inc/eeprom/dee.h inc/mal/k_stdtype.h inc/c_dee.h inc/eeprom/int_dee.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\eeprom\dee_page_helper.c" -o".\output\dee_page_helper.o" -MMD -MF".\output\dee_page_helper.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/dee_page.o : src/eeprom/dee_page.c inc/eeprom/dee.h inc/mal/k_stdtype.h inc/c_dee.h inc/eeprom/int_dee.h inc/mal/mal.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\eeprom\dee_page.c" -o".\output\dee_page.o" -MMD -MF".\output\dee_page.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/dee.o : src/eeprom/dee.c inc/eeprom/dee.h inc/mal/k_stdtype.h inc/c_dee.h inc/eeprom/int_dee.h inc/mal/mal.h inc/eeprom/eeprom.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\eeprom\dee.c" -o".\output\dee.o" -MMD -MF".\output\dee.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/ringBuffer.o : src/buffer/ringBuffer.c inc/buffer/ringBuffer.h inc/c_ringBuffer.h inc/mal/mal.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\buffer\ringBuffer.c" -o".\output\ringBuffer.o" -MMD -MF".\output\ringBuffer.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/ad.o : src/ad.c inc/ad.h inc/mal/k_stdtype.h inc/c_ad.h inc/mal/mal.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\ad.c" -o".\output\ad.o" -MMD -MF".\output\ad.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/spi_sw.o : src/spi_sw/spi_sw.c inc/spi_sw/spi_sw.h inc/mal/k_stdtype.h inc/c_spi_sw.h inc/mal/mal.h inc/c_main.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\spi_sw\spi_sw.c" -o".\output\spi_sw.o" -MMD -MF".\output\spi_sw.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/noinitram.o : src/mal/noinitram.c inc/mal/noinitram.h inc/eeprom_manager/eep_manager.h inc/mal/k_stdtype.h inc/c_eep_manager.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\mal\noinitram.c" -o".\output\noinitram.o" -MMD -MF".\output\noinitram.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/sw_timer.o : src/sx1276/sw_timer.c inc/tmr/tmr.h inc/mal/k_stdtype.h inc/mal/mal.h inc/sx1276/sw_timer.h inc/sx1276/lorawan_defs.h inc/sx1276/tmr_lora_addons.h inc/sx1276/mcc_lora_config.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\sx1276\sw_timer.c" -o".\output\sw_timer.o" -MMD -MF".\output\sw_timer.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/radio_driver_SX1276.o : src/sx1276/radio_driver_SX1276.c inc/sx1276/sx1276.h inc/c_sx1276.h inc/mal/k_stdtype.h inc/sx1276/radio_interface.h inc/sx1276/radio_driver_SX1276.h inc/sx1276/lorawan_defs.h inc/sx1276/radio_registers_SX1276.h inc/sx1276/lorawan_defs.h inc/sx1276/radio_driver_hal.h inc/sx1276/lora_spi.h inc/sx1276/lorawan_radio.h inc/sx1276/lorawan.h inc/sx1276/sw_timer.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\sx1276\radio_driver_SX1276.c" -o".\output\radio_driver_SX1276.o" -MMD -MF".\output\radio_driver_SX1276.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/radio_driver_hal.o : src/sx1276/radio_driver_hal.c inc/sx1276/sx1276.h inc/c_sx1276.h inc/mal/k_stdtype.h inc/sx1276/radio_driver_hal.h inc/sx1276/lora_spi.h inc/sx1276/mcc_lora_config.h inc/spi_sw/spi_sw.h inc/c_spi_sw.h inc/mal/mal.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\sx1276\radio_driver_hal.c" -o".\output\radio_driver_hal.o" -MMD -MF".\output\radio_driver_hal.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/AES.o : src/sx1276/AES.c inc/sx1276/AES.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\sx1276\AES.c" -o".\output\aes.o" -MMD -MF".\output\aes.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/lorawan_aes.o : src/sx1276/lorawan_aes.c inc/sx1276/AES.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\sx1276\lorawan_aes.c" -o".\output\lorawan_aes.o" -MMD -MF".\output\lorawan_aes.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/lorawan.o : src/sx1276/lorawan.c inc/sx1276/sx1276.h inc/c_sx1276.h inc/mal/k_stdtype.h inc/sx1276/lorawan.h inc/sx1276/lorawan_aes.h inc/sx1276/lorawan_aes_cmac.h inc/sx1276/lorawan_defs.h inc/sx1276/lorawan_private.h inc/sx1276/lorawan_defs.h inc/sx1276/AES.h inc/sx1276/radio_interface.h inc/sx1276/radio_driver_SX1276.h inc/sx1276/sw_timer.h inc/sx1276/lorawan_eu.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\sx1276\lorawan.c" -o".\output\lorawan.o" -MMD -MF".\output\lorawan.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/lorawan_aes_cmac.o : src/sx1276/lorawan_aes_cmac.c inc/sx1276/lorawan_aes.h inc/sx1276/lorawan_defs.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\sx1276\lorawan_aes_cmac.c" -o".\output\lorawan_aes_cmac.o" -MMD -MF".\output\lorawan_aes_cmac.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/lorawan_eu.o : src/sx1276/lorawan_eu.c inc/sx1276/lorawan.h inc/sx1276/lorawan_aes.h inc/sx1276/lorawan_aes_cmac.h inc/sx1276/lorawan_private.h inc/sx1276/lorawan_defs.h inc/sx1276/lorawan_defs.h inc/sx1276/AES.h inc/sx1276/radio_interface.h inc/sx1276/radio_driver_SX1276.h inc/sx1276/sw_timer.h inc/sx1276/lorawan_eu.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\sx1276\lorawan_eu.c" -o".\output\lorawan_eu.o" -MMD -MF".\output\lorawan_eu.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+output/sx1276.o : src/sx1276/sx1276.c inc/sx1276/sx1276.h inc/c_sx1276.h inc/sx1276/lorawan.h inc/sx1276/sw_timer.h inc/sx1276/lorawan_defs.h
+	$(CC) -mprocessor=32MX440F256H -x c -c "src\sx1276\sx1276.c" -o".\output\sx1276.o" -MMD -MF".\output\sx1276.d" -I".\inc" -I".\inc\picojpeg" -I".\inc\fatfs" -I".\inc\sx1276" -I".\inc\xtp2046" -I".\inc\buffer" -I".\inc\eeprom_manager" -I".\inc\eeprom" -I".\inc\iic_master" -I".\inc\ili9341" -I".\inc\mal" -I".\inc\spi_sw" -I".\inc\task" -I".\inc\tmr" -I".\inc\usb" -I".\inc\version" -g -D_STANDALONE_APPLICATION -DMAKEFILE_NAME="\"MPLAB\"" -Wall
+
+clean : 
+	$(RM) "output\main.o" "output\c_eep_manager.o" "output\bootloader_interface.o" "output\app.o" "output\serial_usb.o" "output\usb.o" "output\usb_descriptors.o" "output\usb_function_cdc.o" "output\usb_device.o" "output\tmr.o" "output\mal.o" "output\isr.o" "output\exceptions.o" "output\stackmeasure.o" "output\stackmeasure_helper.o" "output\wakeup.o" "output\sleep.o" "output\eep_manager_crc.o" "output\eep_manager.o" "output\eeprom.o" "output\dee_page_helper.o" "output\dee_page.o" "output\dee.o" "output\ringBuffer.o" "output\ad.o" "output\spi_sw.o" "output\noinitram.o" "output\sw_timer.o" "output\radio_driver_SX1276.o" "output\radio_driver_hal.o" "output\AES.o" "output\lorawan_aes.o" "output\lorawan.o" "output\lorawan_aes_cmac.o" "output\lorawan_eu.o" "output\sx1276.o" ".\output\output.elf" ".\output\output.hex"
+

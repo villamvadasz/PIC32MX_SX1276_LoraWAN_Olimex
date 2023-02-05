@@ -1,0 +1,9 @@
+mac pause
+radio set wdt 0
+radio set mod lora
+radio set freq 868100000
+radio set bw 125
+radio set rxbw 125
+radio set sf sf7
+radio rx 0
+mac resume

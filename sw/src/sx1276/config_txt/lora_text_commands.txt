@@ -1,0 +1,105 @@
+sys get hweui
+mac set appskey FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+mac set nwkskey FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+
+mac get ch freq 0
+
+mac set ch freq 0 868100000
+mac set ch freq 1 868300000
+mac set ch freq 2 868500000
+mac set ch freq 3 867100000
+mac set ch freq 4 867300000
+mac set ch freq 5 867500000
+mac set ch freq 6 867700000
+mac set ch freq 7 867900000
+mac set ch freq 8 868800000
+
+mac set ch dcycle 0 99
+mac set ch dcycle 1 99
+mac set ch dcycle 2 99
+mac set ch dcycle 3 99
+mac set ch dcycle 4 99
+mac set ch dcycle 5 99
+mac set ch dcycle 6 99
+mac set ch dcycle 7 99
+mac set ch dcycle 8 99
+
+mac set ch drrange 0 0 5
+mac set ch drrange 1 0 6
+mac set ch drrange 2 0 5
+mac set ch drrange 3 0 5
+mac set ch drrange 4 0 5
+mac set ch drrange 5 0 5
+mac set ch drrange 6 0 5
+mac set ch drrange 7 0 5
+mac set ch drrange 8 7 7
+
+
+mac set ch status 0 on
+mac set ch status 1 on
+mac set ch status 2 on
+mac set ch status 3 on
+mac set ch status 4 on
+mac set ch status 5 on
+mac set ch status 6 on
+mac set ch status 7 on
+mac set ch status 8 on
+
+mac set class a
+ 
+mac set rxdelay1 5000
+mac set rxdelay2 1000
+
+
+
+
+mac set adr off
+mac set devaddr 260B438D
+mac set rx2 3 869525000
+
+mac join abp
+
+mac set dr 0
+mac set dr 5
+mac tx uncnf 1 AB
+mac tx cnf 1 AB
+
+DevEUI 70B3D57ED005A04E
+DevAddr 260B438D
+AppSKey F234CE7719882CD2A2B93A11EB1D4908
+NwkSKey A0C555AF71D11C29261A482D7EEE14F0
+eui-70b3d57ed005a04e
+
+
+
+EU863-870 
+
+Uplink:
+
+1    868.1 - SF7BW125 to SF12BW125                  868100000
+2    868.3 - SF7BW125 to SF12BW125 and SF7BW250     868300000
+3    868.5 - SF7BW125 to SF12BW125                  868500000
+4    867.1 - SF7BW125 to SF12BW125                  867100000
+5    867.3 - SF7BW125 to SF12BW125                  867300000
+6    867.5 - SF7BW125 to SF12BW125                  867500000
+7    867.7 - SF7BW125 to SF12BW125                  867700000
+8    867.9 - SF7BW125 to SF12BW125                  867900000
+9    868.8 - FSK                                    868800000
+
+Downlink:
+
+    Uplink channels 1-9 (RX1)
+    869.525 - SF9BW125 (RX2)
+
+
+0	SF12/125
+1	SF11/125
+2	SF10/125
+3	SF9/125
+4	SF8/125
+5	SF7/125
+6	SF7/250
+7	FSK
+8..15 RFU
+	
+

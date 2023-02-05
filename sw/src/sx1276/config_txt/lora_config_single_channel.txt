@@ -1,0 +1,56 @@
+sys get hweui
+mac set appskey FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+mac set nwkskey FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+mac get ch freq 0
+mac set ch freq 0 868100000
+mac set ch freq 1 868300000
+mac set ch freq 2 868500000
+mac set ch freq 3 867100000
+mac set ch freq 4 867300000
+mac set ch freq 5 867500000
+mac set ch freq 6 867700000
+mac set ch freq 7 867900000
+mac set ch freq 8 868800000
+mac set ch dcycle 0 0
+mac set ch dcycle 1 0
+mac set ch dcycle 2 0
+mac set ch dcycle 3 0
+mac set ch dcycle 4 0
+mac set ch dcycle 5 0
+mac set ch dcycle 6 0
+mac set ch dcycle 7 0
+mac set ch dcycle 8 0
+mac set ch drrange 0 5 5
+mac set ch drrange 1 0 6
+mac set ch drrange 2 0 5
+mac set ch drrange 3 0 5
+mac set ch drrange 4 0 5
+mac set ch drrange 5 0 5
+mac set ch drrange 6 0 5
+mac set ch drrange 7 0 5
+mac set ch drrange 8 7 7
+mac set ch status 0 on
+mac set ch status 1 off
+mac set ch status 2 off
+mac set ch status 3 off
+mac set ch status 4 off
+mac set ch status 5 off
+mac set ch status 6 off
+mac set ch status 7 off
+mac set ch status 8 off
+mac set class a
+mac set rxdelay1 5000
+mac set adr off
+mac set devaddr 260B438D
+mac set rx2 3 869525000
+mac get ch status 0
+mac get ch status 1
+mac get ch status 2
+mac get ch status 3
+mac get ch status 4
+mac get ch status 5
+mac get ch status 6
+mac get ch status 7
+mac get ch status 8
+mac set dr 5
+mac join abp

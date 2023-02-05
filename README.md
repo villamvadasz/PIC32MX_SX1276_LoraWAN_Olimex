@@ -74,3 +74,5 @@ The lorawan_eu.c had some unalligned access:
     frequency = (*((uint32_t*)ptr)) & 0x00FFFFFF;
 This would try to read a uint8 pointer as a uint32 pointer, pointing to not a 4 byte aligned location, causing an exception. Fixed with:
     frequency = sx1276_read_uint32_unaligend(ptr) & 0x00FFFFFF;
+### Unaligned access
+DIO5 is not connected, so mode switch is now polling
